@@ -744,53 +744,80 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(10px);
 }
 
-.cd-block {
-  flex: 1;
-  min-width: 0;
-  height: 6.7rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: .9rem;
+.cd-block{
+  flex:1;
+  min-width:0;
+  height:6.9rem;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:1rem;
+
   background:
-    linear-gradient(180deg, rgba(255,255,255,.96), rgba(250,246,238,.92));
-  border: 1px solid rgba(160,120,64,.16);
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.96),
+      rgba(250,246,238,.92)
+    );
+
+  border:1px solid rgba(181,145,92,.16);
+
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.95),
-    0 8px 18px rgba(47,79,63,.07);
+    0 10px 24px rgba(90,76,58,.06);
 }
 
-.cd-num {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.55rem, 11vw, 4rem);
-  font-weight: 400;
-  line-height: .86;
-  letter-spacing: -.02em;
-  color: var(--sg-dk);
-  font-variant-numeric: tabular-nums;
+/* Số countdown */
+.cd-num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:4rem;
+  line-height:1;
+  font-weight:500;
+
+  color:#8b7355;
+
+  letter-spacing:.02em;
+  text-shadow:0 2px 8px rgba(79,116,93,.08);
 }
 
-.cd-lbl {
-  margin-top: .65rem;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: .55rem;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--go);
+/* Chữ nhỏ */
+.cd-lbl{
+  margin-top:.55rem;
+
+  font-size:.72rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+
+  color:#b08a57;
+  font-weight:500;
 }
 
-.cd-dot {
-  flex: 0 0 auto;
-  transform: translateY(-.65rem);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.7rem;
-  font-weight: 300;
-  line-height: 1;
-  color: rgba(160,120,64,.34);
+/* Dấu chấm */
+.cd-dot{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 .45rem;
+
+  color:#d8bf9a;
+  font-size:1.35rem;
+}
+
+/* Tiêu đề */
+.cd-sec-title{
+  color:#7b5d3d;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+}
+
+/* Khối cô dâu chú rể */
+.cd-couple-wrap{
+  position:relative;
+  margin-top:1.7rem;
 }
 
 @media (max-width: 420px) {
@@ -1098,6 +1125,336 @@ img { max-width: 100%; display: block; }
     transform: rotate(360deg);
   }
 }
+/* =========================
+   SAVE THE DATE
+========================= */
+
+.savedate-sec{
+  padding: 4.5rem 1.2rem;
+  background:
+    linear-gradient(
+      180deg,
+      #f8f6f2 0%,
+      #f5f1eb 100%
+    );
+
+  text-align:center;
+}
+
+/* Title */
+
+.savedate-script{
+  font-family:'Cormorant Garamond', serif;
+  font-size:4rem;
+  line-height:1;
+
+  color:#8a623d;
+  font-weight:500;
+}
+
+.savedate-script span{
+  font-size:1.4rem;
+  letter-spacing:.16em;
+  margin:0 .25rem;
+  color:#b9986f;
+}
+
+.savedate-month{
+  margin-top:.9rem;
+
+  font-size:.82rem;
+  letter-spacing:.42em;
+
+  color:#a47b4f;
+  font-weight:600;
+}
+
+/* =========================
+   CALENDAR WRAP
+========================= */
+
+.cal-wrap{
+  margin:2rem auto 0;
+
+  max-width:360px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.96),
+      rgba(251,248,242,.92)
+    );
+
+  border-radius:1.4rem;
+
+  overflow:hidden;
+
+  border:1px solid rgba(185,154,112,.12);
+
+  box-shadow:
+    0 12px 30px rgba(85,70,50,.07),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.cal-head{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+
+  padding:.95rem .6rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7f1e8,
+      #f5eee4
+    );
+}
+
+.cal-head span{
+  font-size:.78rem;
+  font-weight:600;
+
+  color:#9c7447;
+
+  letter-spacing:.06em;
+}
+
+/* =========================
+   BODY
+========================= */
+
+.cal-body{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+
+  gap:.35rem;
+
+  padding:1rem .55rem 1.3rem;
+}
+
+/* Day */
+
+.cal-day,
+.cal-empty{
+  position:relative;
+
+  width:100%;
+  aspect-ratio:1/1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.sun,
+.sun-day{
+  color:#a67847 !important;
+}
+/* Number */
+
+.cal-day{
+  font-family:'Cormorant Garamond', serif;
+
+  font-size:1.45rem;
+  font-weight:500;
+
+  color:#6c625a;
+}
+
+
+
+/* =========================
+   WEDDING DAY
+========================= */
+
+/* Wedding day */
+
+.cal-wed{
+  position:relative;
+
+  color:#d86f6f !important;
+  font-weight:700;
+
+  z-index:5;
+}
+
+/* Số 13 */
+
+.cal-num{
+  position:relative;
+  z-index:10;
+}
+
+/* Tim ôm quanh */
+
+.heart-ring{
+  position:absolute;
+
+  width:54px;
+  height:48px;
+
+  left:50%;
+  top:50%;
+
+  /* chỉnh xuống thấp hơn */
+  transform:translate(-50%,-47%);
+
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'%3E%3Cpath d='M50 82C50 82 6 56 6 28C6 12 18 2 32 2C43 2 50 10 50 10C50 10 57 2 68 2C82 2 94 12 94 28C94 56 50 82 50 82Z' fill='none' stroke='%23e07b7b' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+
+  opacity:.95;
+}
+
+/* Tim nhỏ */
+
+.heart-mini{
+  position:absolute;
+
+  right:6px;
+  bottom:2px;
+
+  font-size:.58rem;
+
+  color:#de8f8f;
+
+  transform:rotate(-10deg);
+}
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes heartFloat{
+  0%,100%{
+    transform:
+      translate(-50%,-54%)
+      scale(1);
+  }
+
+  50%{
+    transform:
+      translate(-50%,-56%)
+      scale(1.04);
+  }
+}
+
+@keyframes miniBeat{
+  0%,100%{
+    transform:rotate(-12deg) scale(1);
+  }
+
+  50%{
+    transform:rotate(-12deg) scale(1.18);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+  .savedate-script{
+    font-size:3.2rem;
+  }
+
+  .cal-day{
+    font-size:1.28rem;
+  }
+
+  .heart-ring{
+    width:50px;
+    height:44px;
+  }
+}
+/* =====================================================
+   COUNTDOWN — đổi label + thêm SVG cô dâu chú rể
+   ===================================================== */
+
+/* Tiêu đề countdown mới */
+.cd-sec-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: .68rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sf);
+  margin-bottom: .5rem;
+}
+.cd-sec-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 7vw, 2.1rem);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--dk);
+  line-height: 1.2;
+  margin-bottom: .2rem;
+}
+
+/* CD Couple wrapper + floating hearts */
+.cd-couple-wrap {
+  position: relative;
+  width: 180px;
+  margin: 1.4rem auto 0;
+  height: 110px;
+}
+.cd-couple {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.cd-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.fh {
+  position: absolute;
+  color: #E05555;
+  font-size: 1rem;
+  animation: floatHeart 2.5s ease-in-out infinite;
+  opacity: 0;
+}
+.fh1 { left: 42%; top: 10%; font-size: .8rem; animation-delay: 0s;   animation-duration: 2.2s; }
+.fh2 { left: 48%; top: 5%;  font-size: 1rem;  animation-delay: .4s;  animation-duration: 2.6s; }
+.fh3 { left: 54%; top: 12%; font-size: .7rem; animation-delay: .8s;  animation-duration: 2s; }
+.fh4 { left: 38%; top: 15%; font-size: .6rem; animation-delay: 1.2s; animation-duration: 2.8s; }
+.fh5 { left: 58%; top: 8%;  font-size: .65rem;animation-delay: 1.6s; animation-duration: 2.4s; }
+
+@keyframes floatHeart {
+  0%   { opacity: 0; transform: translateY(0) scale(.8); }
+  20%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-55px) scale(1.1); }
+}
+/* Ngày 13 — ngày cưới — theo ảnh tham khảo */
+.cal-wed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  height: 2.4rem;
+  position: relative;
+}
+
+.cal-heart {
+  font-size: .62rem;   /* tim nhỏ gọn phía trên */
+  color: #E05555;
+  line-height: 1;
+  display: block;
+  animation: heartPulse 1.4s ease-in-out infinite;
+}
+
+.cal-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #E05555;
+  font-weight: 600;
+  line-height: 1;
+  display: block;
+}
 
 
 </style>
@@ -1366,36 +1723,155 @@ img { max-width: 100%; display: block; }
     </div>
   </div>
 </section>
+<!-- =====================================================
+     [H2] SAVE THE DATE — lịch tháng 6/2026 + ngày 13 đánh dấu trái tim
+     ===================================================== -->
+<section class="savedate-sec">
 
+  <div class="savedate-script rv rv2">
+    Save <span>the</span> Date
+  </div>
+
+  <p class="savedate-month rv rv3">
+    THÁNG 06 · 2026
+  </p>
+
+  <div class="gold-bar rv"></div>
+
+  <!-- CALENDAR -->
+  <div class="cal-wrap rv">
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+<div class="cal-head">
+  <span>T2</span>
+  <span>T3</span>
+  <span>T4</span>
+  <span>T5</span>
+  <span>T6</span>
+  <span>T7</span>
+  <span class="sun">CN</span>
+</div>
+
+<!-- BODY -->
+<div class="cal-body">
+
+  <!-- ROW 1 -->
+  <span class="cal-day">1</span>
+  <span class="cal-day">2</span>
+  <span class="cal-day">3</span>
+  <span class="cal-day">4</span>
+  <span class="cal-day">5</span>
+  <span class="cal-day">6</span>
+  <span class="cal-day sun-day">7</span>
+
+  <!-- ROW 2 -->
+  <span class="cal-day">8</span>
+  <span class="cal-day">9</span>
+  <span class="cal-day">10</span>
+  <span class="cal-day">11</span>
+  <span class="cal-day">12</span>
+
+  <!-- Wedding day -->
+  <span class="cal-day cal-wed">
+    <span class="heart-ring"></span>
+    <span class="heart-mini">♥</span>
+    <span class="cal-num">13</span>
+  </span>
+
+  <span class="cal-day sun-day">14</span>
+
+  <!-- ROW 3 -->
+  <span class="cal-day">15</span>
+  <span class="cal-day">16</span>
+  <span class="cal-day">17</span>
+  <span class="cal-day">18</span>
+  <span class="cal-day">19</span>
+  <span class="cal-day">20</span>
+  <span class="cal-day sun-day">21</span>
+
+  <!-- ROW 4 -->
+  <span class="cal-day">22</span>
+  <span class="cal-day">23</span>
+  <span class="cal-day">24</span>
+  <span class="cal-day">25</span>
+  <span class="cal-day">26</span>
+  <span class="cal-day">27</span>
+  <span class="cal-day sun-day">28</span>
+
+  <!-- ROW 5 -->
+  <span class="cal-day">29</span>
+  <span class="cal-day">30</span>
+
+</div>
+
+    </div>
+  </div>
+
+</section>
 <!-- =====================================================
      8. ĐẾM NGƯỢC
      ===================================================== -->
 <section class="cd-sec">
-  <p class="micro rv">Đếm ngược</p>
-  <h2 class="s-title rv rv2">Còn bao lâu nữa?</h2>
-  <div class="gold-bar rv rv3"></div>
+  <p class="cd-sec-title rv">Hôn Lễ Sẽ Diễn Ra Sau:</p>
+
+  <div class="gold-bar rv rv2"></div>
+
   <div class="cd-row rv">
     <div class="cd-card">
+
       <div class="cd-block">
         <span class="cd-num" id="cd-d">--</span>
         <div class="cd-lbl">Ngày</div>
       </div>
+
       <div class="cd-dot">·</div>
+
       <div class="cd-block">
         <span class="cd-num" id="cd-h">--</span>
         <div class="cd-lbl">Giờ</div>
       </div>
+
       <div class="cd-dot">·</div>
+
       <div class="cd-block">
         <span class="cd-num" id="cd-m">--</span>
         <div class="cd-lbl">Phút</div>
       </div>
+
       <div class="cd-dot">·</div>
+
       <div class="cd-block">
         <span class="cd-num" id="cd-s">--</span>
         <div class="cd-lbl">Giây</div>
       </div>
+
     </div>
+  </div>
+
+  <!-- Đưa xuống dưới countdown -->
+  <div class="cd-couple-wrap">
+    <div class="cd-hearts">
+      <span class="fh fh1">♥</span>
+      <span class="fh fh2">♥</span>
+      <span class="fh fh3">♥</span>
+      <span class="fh fh4">♥</span>
+      <span class="fh fh5">♥</span>
+    </div>
+
+    <img
+      class="cd-couple"
+      src="couple.jpg"
+      alt="Cô dâu & Chú rể"
+      style="
+        width:170px;
+        height:110px;
+        object-fit:contain;
+        display:block;
+        margin:28px auto 0;
+        mix-blend-mode:multiply;
+      "
+    >
   </div>
 </section>
 
